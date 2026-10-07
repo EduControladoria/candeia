@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Candeia — conectando…</title>
+<style>body{margin:0;background:#14110c;color:#e9dfc8;font:16px/1.6 Georgia,serif}main{max-width:560px;margin:0 auto;padding:48px 16px}a{color:#f2b544}</style>
+</head>
+<body>
+<main>
+<p>Voltando para o Candeia no seu computador…</p>
+<p><small>Se nada acontecer, <a id="go" href="#">clique aqui</a>. O Candeia precisa estar aberto neste PC.</small></p>
+</main>
+<script>
+// Ponte do login da Meta: a Meta só aceita endereço de retorno HTTPS, e o Candeia roda no PC
+// (http://127.0.0.1). Esta página não guarda nem envia nada: só repassa os parâmetros ao Candeia local.
+var target = "http://127.0.0.1:8765/oauth/meta/callback" + location.search;
+document.getElementById("go").href = target;
+location.replace(target);
+</script>
+</body>
+</html>
